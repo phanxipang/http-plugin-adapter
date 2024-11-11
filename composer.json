@@ -1,0 +1,79 @@
+{
+    "name": "fansipan/http-plugin-adapter",
+    "description": "Fansipan adapter middleware for HTTPlug plugins",
+    "keywords": [
+        "fansipan",
+        "middleware",
+        "adapter",
+        "http",
+        "httplug",
+        "plugin"
+    ],
+    "homepage": "https://github.com/phanxipang/http-plugin-adapter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lynh",
+            "email": "contact@lynh.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5|^8.0",
+        "php-http/client-common": "^2.7",
+        "php-http/discovery": "^1.20"
+    },
+    "require-dev": {
+        "fansipan/fansipan": "^1.2",
+        "fansipan/mock-client": "^1.2",
+        "fansipan/request-matcher": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "guzzlehttp/guzzle": "^7.8",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fansipan\\HttpPluginAdapter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fansipan\\HttpPluginAdapter\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": [
+            "vendor/bin/phpstan analyse"
+        ],
+        "cs": [
+            "vendor/bin/php-cs-fixer fix"
+        ],
+        "test": [
+            "vendor/bin/phpunit"
+        ],
+        "check": [
+            "@cs --dry-run",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "suggest": {
+        "php-http/cache-plugin": "Required to use Cache Plugin.",
+        "php-http/logger-plugin": "Required to use Logger Plugin.",
+        "php-http/stopwatch-plugin": "Required to use Stopwatch Plugin."
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
