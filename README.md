@@ -19,7 +19,7 @@ composer require fansipan/http-plugin-adapter
 
 ## Documentation
 
-Documentation can be found on the [Fansipan website](https://phanxipang.github.io/fansipan/).
+Documentation can be found on the [Fansipan website](https://phanxipang.github.io/fansipan/plugins/php-http).
 
 ## Testing
 
