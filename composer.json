@@ -60,8 +60,7 @@
     },
     "suggest": {
         "php-http/cache-plugin": "Required to use Cache Plugin.",
-        "php-http/logger-plugin": "Required to use Logger Plugin.",
-        "php-http/stopwatch-plugin": "Required to use Stopwatch Plugin."
+        "php-http/logger-plugin": "Required to use Logger Plugin."
     },
     "extra": {
         "branch-alias": {
