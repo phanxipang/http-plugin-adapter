@@ -20,11 +20,18 @@ final class PluginAdapter
     private $plugins;
 
     /**
-     * @param iterable<Plugin> $plugins
+     * @var array<string, mixed>
      */
-    public function __construct(iterable $plugins)
+    private $options;
+
+    /**
+     * @param  iterable<Plugin> $plugins
+     * @param  array<string, mixed> $options
+     */
+    public function __construct(iterable $plugins, array $options = [])
     {
         $this->plugins = $plugins;
+        $this->options = $options;
     }
 
     /**
@@ -40,7 +47,7 @@ final class PluginAdapter
             } catch (Exception $exception) {
                 return new HttpRejectedPromise($exception);
             }
-        });
+        }, $this->options);
 
         return $pluginChain($request)->wait();
     }
